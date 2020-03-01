@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -26,19 +27,21 @@ public class ReportActivity extends AppCompatActivity {
 
         String Jstr = readAnswer();
         try {
-            JSONObject jsonObject = new JSONObject(Jstr);
-            String str = "These are answers saved in File saveAnswer.json: "+jsonObject.getString("question 01") + "，";
-            str += jsonObject.getString("question 02") + "，";
-            str += jsonObject.getString("question 03") + "，";
-            str += jsonObject.getString("question 04") + "，";
-            str += jsonObject.getString("question 05") + "，";
-            str += jsonObject.getString("question 06") + "，";
-            str += jsonObject.getString("question 07") + "，";
-            str += jsonObject.getString("question 08") + "，";
-            str += jsonObject.getString("question 09") + "，";
-            str += jsonObject.getString("question 10") + "，";
-            str += jsonObject.getString("question 11") + "，";
-            str += jsonObject.getString("question 12");
+            JSONArray jArr = new JSONArray(Jstr);
+            JSONObject current=(JSONObject) jArr.get(jArr.length()-1);
+            System.out.println("The Length of jArr is"+jArr.length());
+            String str = "These are answers saved in File saveAnswer.json: "+current.getString("question 01") + "，";
+            str += current.getString("question 02") + "，";
+            str += current.getString("question 03") + "，";
+            str += current.getString("question 04") + "，";
+            str += current.getString("question 05") + "，";
+            str += current.getString("question 06") + "，";
+            str += current.getString("question 07") + "，";
+            str += current.getString("question 08") + "，";
+            str += current.getString("question 09") + "，";
+            str += current.getString("question 10") + "，";
+            str += current.getString("question 11") + "，";
+            str += current.getString("question 12");
             AlertDialog accept = new AlertDialog.Builder(this)
                     .setMessage(str)
                     .setPositiveButton("OK", null)

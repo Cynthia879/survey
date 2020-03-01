@@ -28,6 +28,7 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -272,15 +273,36 @@ public class MainActivity extends AppCompatActivity {
 
     public void report(View view) {
         System.out.println(Jstr);
-        saveFile(Jstr);
+        try {
+            saveFile(Jstr);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         startActivity(AtoB);
     }
 
-    public void saveFile(String msg) {
+    public void saveFile(String msg) throws IOException {
         File sdFile = Environment.getExternalStorageDirectory();
         File saveAnswer = new File(sdFile, "saveAnswer.json");
         if (saveAnswer.exists()) {
-            System.out.println("成功");
+            System.out.println("saveAnswer exists");
+            byte[] buffer = new byte[32 * 1024];
+            FileInputStream fis = new FileInputStream(saveAnswer);
+            int len = 0;
+            StringBuffer sb = new StringBuffer("");
+            while ((len = fis.read(buffer)) > 0) {
+                sb.append(new String(buffer, 0, len));
+            }
+            fis.close();
+            String temp = sb.toString();
+            int length = temp.length();
+            temp = temp.substring(0, length - 1);
+            temp += ",";
+            temp += msg + "]";
+            msg=temp;
+        } else {
+            System.out.println("saveAnswer doesn't exists");
+            msg = "["+msg+"]";
         }
         try {
             FileOutputStream fout = new FileOutputStream(saveAnswer);
