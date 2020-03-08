@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--  Start : Your code should be within this block -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#EEE9E9">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="SvyU"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:background="#43CD80">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:text="PLEASE CHOOSE AN SURVEY"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="LET'S BEGIN!"
+            android:textColor="#000000"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:textSize="17sp"
+            android:text="The file sample.json has been saved in the root directory of sdcard, you can enter sample in the edit field. If you want
+to load your own file, the file can only be found in the root directory of the sdcard (similar to the path of the file sample.json)"></TextView>
+
+        <EditText
+            android:id="@+id/jsonfilename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="enter your json file name"></EditText>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:background="#43CD80"
+                android:text="Json File survey"
+                android:textSize="20sp"
+                android:onClick="StartFileSurvey"></Button>
+            <Button
+                android:layout_marginLeft="20dp"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:background="#43CD80"
+                android:textSize="20sp"
+                android:text="default survey"
+                android:onClick="StartDefaultSurvey"></Button>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!-- END    : Your code should be within this block -->
+
+</LinearLayout>
+

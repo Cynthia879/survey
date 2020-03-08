@@ -51,6 +51,7 @@ public class ReportActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+
         String ans01 = "Question 1: " + Re_intent.getStringExtra("ans01");
         String ans02 = "Question 2: " + Re_intent.getStringExtra("ans02");
         String ans03 = "Question 3: " + Re_intent.getStringExtra("ans03");
