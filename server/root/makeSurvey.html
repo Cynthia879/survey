@@ -1,0 +1,46 @@
+<!-- the page to create your survey and post it -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="custom.css">
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="makeSurvey.js"></script>
+    <title>Create Survey</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="backbtn">Back to index page</a>
+        <h2 class="h2">Enjoy Editing Your Survey</h2>
+    </header>
+
+    <div class="container">
+        <!-- choose the question type -->
+        <div class="sidebar">
+            <h3>Question Type</h3>
+            <ul class="side-choice">
+                <li><button class="sinbtn">Single</button></li>
+                <li><button class="mulbtn">Multiple</button></li>
+                <li><button class="edtbtn">Filling Question</button></li>
+            </ul>
+        </div>
+        <!-- create the questions -->
+        <div class="surveymake">
+            <div class="sur-form">
+                <div class="sur-title">
+                    <input type="text" class="title tit" value="Survey Title">
+                    <div class="title" contenteditable="true">Greetings at the beginning</div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="postbar"><button class="postbtn">POST</button></div>
+    </div>
+</body>
+
+</html>

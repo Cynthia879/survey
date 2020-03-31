@@ -1,0 +1,34 @@
+<!-- This is the home page, where to show the survey boxes and QR code -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="custom.css">
+    <title>Main Page</title>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="index.js"></script>
+	<script src="qrcode.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to create your survey</h1>
+        <button class="createBtn">Create</button>
+    </header>
+    <div class="flex-container">
+        <!-- here is where to show the boxes of surveys -->
+    </div>
+    <!-- here is to show QR code -->
+    <div class="qrcode" id="qrcode">QRCODE</div>
+
+</body>
+<script>
+    $('.createBtn').on('click', function() {
+        window.location.href = "makeSurvey.html";
+    })
+</script>
+
+</html>
